@@ -1,5 +1,6 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Personne } from '../../Model/Personne';
+import { CvService } from '../../services/cv-service';
 
 
 @Component({
@@ -10,29 +11,8 @@ import { Personne } from '../../Model/Personne';
   styleUrl: './listecv.css',
 })
 export class Listecv {
-
-  personnes : Personne[] = [{
-        id: 1,
-        name: 'Yasmine',
-        firstname: 'Chaari',
-        age: 21,
-        cin: 12345678,
-        path: 'image.png',
-        job: 'Student',
-        description:
-          'I am a computer science student passionate about web development and AI.',
-      },
-      {
-        id: 2,
-        name: 'Random',
-        firstname: 'Person',
-        age: 30,
-        cin: 12345678,
-        path: 'random.jpg',
-        job: 'Developer',
-        description:
-          'Experienced developer with a focus on front-end technologies and UX design.',
-      },]; 
+  CvService: CvService= inject(CvService);
+  personnes: Personne[] = this.CvService.getFullList();
 
   selected_person = output<Personne>();
 
