@@ -1,0 +1,9 @@
+@if(personnes_embauchees.length != 0){
+    Liste des pré sélectionnés: 
+    @for(item of personnes_embauchees; track item.id ){
+        <img src="assets/images/ {{item.path}}"/>
+        <p>{{item.name}}</p>
+    }
+}
+
+
