@@ -1,0 +1,13 @@
+<ol class="list-group">
+    @for(item of personnes; track item.id){
+    <li class="list-group-item" (click)="change_selected_cv(item)">
+        <img
+            src="assets/images/{{ item.path }}"
+            width="50"
+            height="50"
+            alt="{{ item.firstname }}"
+        />
+        {{ item.name }} {{ item.firstname }}
+    </li>
+}
+</ol>

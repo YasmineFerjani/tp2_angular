@@ -1,0 +1,70 @@
+<div class="col-md-12 col-sm-12">
+  <div class="card-container">
+    <div class="card">
+        @if(cv_to_show() != null){
+      <div class="front">
+        <div class="cover">
+          <img src="assets/images/rotating_card_thumb2.png" />
+        </div>
+        <div class="user">
+          <img
+            class="img-circle"
+            [src]="
+              cv_to_show()
+                ? 'assets/images/' + cv_to_show()!.path 
+                : 'assets/images/placeholder.jpg'
+            "
+            [alt]='cv_to_show()?.firstname '
+          />
+          
+        </div>
+        <div class="content">
+          <div class="main">
+            <h3 class="name">{{ cv_to_show()?.name }} {{ cv_to_show()?.firstname }}</h3>
+            <p class="profession">{{ cv_to_show()?.job }}</p>
+            <p class="text-center">{{ cv_to_show()?.description }}</p>
+          </div>
+          <div class="footer">
+            <i class="fa fa-mail-forward"></i> Auto Rotation
+          </div>
+        </div>
+      </div>
+      <!-- end front panel -->
+      <div class="back">
+        <div class="header">
+          <h5 class="motto">{{ cv_to_show()?.name }} {{ cv_to_show()?.firstname }}</h5>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h4 class="text-center">{{ cv_to_show()?.description }}</h4>
+            <p class="text-center">{{ cv_to_show()?.job }}</p>
+
+            <div class="stats-container">
+              <div class="stats">
+                <h4>CIN</h4>
+                <p>
+                  {{ cv_to_show()?.cin }}
+                </p>
+              </div>
+              <div class="stats">
+                <h4>{{ cv_to_show()?.age }}</h4>
+                <p>Age</p>
+              </div>
+              <div class="stats">
+                <h4>{{ cv_to_show()?.job }}</h4>
+                <p>Position</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="social-links text-center"></div>
+        </div>
+      </div>
+    }
+      <!-- end back panel -->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end card-container -->
+</div>

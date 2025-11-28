@@ -1,0 +1,23 @@
+<div>
+<h2>Saisir les informations</h2>
+
+<label>Full Name</label>
+<input #nameform class="form-control"  (input)="updateFullName(nameform.value)">
+
+<label>Current position</label>
+<input #jobform class="form-control"  (input)="updateJob(jobform.value)">
+
+<label>Phone</label>
+<input #phoneform class="form-control"  (input)="updatePhone(phoneform.value)">
+
+<label>Email</label>
+<input #emailform class="form-control"  (input)="updateEmail(emailform.value)">
+
+<label>Description</label>
+<textarea #descriptionform class="form-control"  (input)="updateDescription(descriptionform.value)"></textarea>
+
+<label>Moto</label>
+<textarea #motoform class="form-control"  (input)="updateMoto(motoform.value)"></textarea>
+<label>Address</label>
+<textarea #addressform class="form-control"  (input)="updateAddress(addressform.value)"></textarea>
+</div>

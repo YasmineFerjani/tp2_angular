@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6 col-sm-3">
+    <app-input 
+        (fullname)="fullname.set($event)"
+        (job)="job.set($event)"
+        (moto)="moto.set($event)"
+        (description)="description.set($event)"
+        (email)="email.set($event)"
+        (phone)="phone.set($event)"
+        (address)="address.set($event)"  ></app-input>
+  </div>
+  <div class="col-md-6 col-sm-9">
+    <app-show 
+        [fullname]="fullname()"
+        [job]="job()"
+        [moto]="moto()"
+        [description]="description()"
+        [email]="email()"
+        [phone]="phone()"
+        [address]="address()"></app-show>
+  </div>
+</div>
