@@ -4,11 +4,12 @@ import { BusinessComponent } from './businesscard/business/business';
 import { ChangeColorComponent } from './change-color/change-color';
 import { Listecv } from './cvTech/listecv/listecv';
 import { Display } from './cvTech/display/display';
+import { Navbar } from './navbar/navbar';
 
 @Component({
   standalone:true,
   selector: 'app-root',
-  imports: [RouterOutlet, BusinessComponent, ChangeColorComponent, Display],
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
