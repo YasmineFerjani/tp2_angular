@@ -34,6 +34,15 @@ export class CvService {
   }
 
   getCvById(id:number){
-    return this.cv_list.find((cv) => cv.id === id);
+    const cv = this.cv_list.find((cv) => cv.id === id); 
+    if (cv){
+       return cv;
+    }
+    return null ;
+  }
+
+  deleteCvById(id:number){
+    const idx = this.cv_list.findIndex((cv)=> cv.id === id); 
+    this.cv_list.splice(idx,1); 
   }
 }

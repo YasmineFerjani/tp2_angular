@@ -59,7 +59,8 @@
         </div>
         <div class="footer">
           <div class="social-links text-center">
-            <button class="btn-simple"  (click)="addEmbauche()">Embaucher</button>
+            <button type="button" class="btn btn-primary"  (click)="addEmbauche()">Embaucher</button>
+            <button type="button" class="btn btn-secondary" (click)="checkDetails(cv_to_show()?.id!)">Details</button>
           </div>
         </div>
       </div>
