@@ -1,9 +1,16 @@
-@if(personnes_embauchees.length != 0){
-    Liste des pré sélectionnés: 
-    @for(item of personnes_embauchees; track item.id ){
-        <img src="assets/images/ {{item.path}}"/>
-        <p>{{item.name}}</p>
+@if (personnes_embauchees.length != 0) {
+  <p>Liste des pré sélectionnés:</p>
+
+  <ul class="preselect-list">
+    @for (item of personnes_embauchees; track item.id) {
+      <li class="preselect-item">
+        <img
+          class="avatar"
+          src="assets/images/{{ item.path }}"
+          alt="{{ item.firstname }}"
+        />
+        <span class="name">{{ item.name }}</span>
+      </li>
     }
+  </ul>
 }
-
-

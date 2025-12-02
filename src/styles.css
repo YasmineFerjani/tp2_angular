@@ -2,3 +2,6 @@
 @import'bootstrap';
 @import url('./assets/css/rotating-card.css');
 
+body{
+    margin: 5% 5%;
+}

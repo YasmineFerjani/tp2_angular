@@ -1,38 +1,49 @@
 @if(cv){
-    <h1> CV {{cv.firstname}} {{cv.name}}</h1>
-<img src="assets/images/{{cv.path}}">
-<div>
-    <h2>id</h2>
-    <p>{{cv.id}}</p>
-</div>
-<div>
-    <h2>name</h2>
-    <p>{{cv.name}}</p>
-</div>
-<div>
-    <h2>firstname</h2>
-    <p>{{cv.firstname}}</p>
-</div>
-<div>
-    <h2>age</h2>
-    <p>{{cv.age}}</p>
-</div>
-<div>
-    <h2>cin</h2>
-    <p>{{cv.cin}}</p>
-</div>
-<div>
-    <h2>job</h2>
-    <p>{{cv.job}}</p>
-</div>
-<div>
-    <h2>description</h2>
-    <p>{{cv.description}}</p>
-</div>
+<div class="cv-container">
 
-<button type="button" class="btn btn-danger" (click)="deleteCV(cv.id)">Delete</button>
+    <h1>CV {{cv.firstname}} {{cv.name}}</h1>
+
+    <img src="assets/images/{{cv.path}}">
+
+    <div class="cv-field">
+        <h2>id</h2>
+        <p>{{cv.id}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>name</h2>
+        <p>{{cv.name}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>firstname</h2>
+        <p>{{cv.firstname}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>age</h2>
+        <p>{{cv.age}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>cin</h2>
+        <p>{{cv.cin}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>job</h2>
+        <p>{{cv.job}}</p>
+    </div>
+
+    <div class="cv-field">
+        <h2>description</h2>
+        <p>{{cv.description}}</p>
+    </div>
+
+    <button type="button" class="btn btn-danger" (click)="deleteCV(cv.id)">Delete</button>
+
+</div>
 
 }@else {
-    <p> Sorry Couldn't find the CV of id {{id}}!</p>
+    <p>Sorry, couldn't find the CV with id {{id}}!</p>
 }
-
