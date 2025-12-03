@@ -26,7 +26,7 @@ export class ImageSlider {
 
   createStream(): Observable<string> {
     return interval(this.speed).pipe(
-      startWith(this.images.length - 1),
+      startWith(0),
       map(i => this.images[i % this.images.length])
     );
   }

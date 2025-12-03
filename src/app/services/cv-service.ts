@@ -10,7 +10,7 @@ import { Personne } from '../Model/Personne';
 })
 export class CvService {
 
-  private apiUrl = 'https://apilb.tridevs.net/api/personne';
+  private apiUrl = 'https://apilb.tridevs.net/api/personnes';
 
   private cv_list: Personne[] = [
     {
