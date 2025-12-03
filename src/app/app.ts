@@ -5,11 +5,12 @@ import { ChangeColorComponent } from './change-color/change-color';
 import { Listecv } from './cvTech/listecv/listecv';
 import { Display } from './cvTech/display/display';
 import { Navbar } from './navbar/navbar';
+import { ImageSlider } from './image-slider/image-slider';
 
 @Component({
-  standalone:true,
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar],
+  imports: [RouterOutlet, Navbar, ImageSlider],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

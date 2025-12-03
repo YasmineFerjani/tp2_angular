@@ -1,0 +1,28 @@
+<form #myForm="ngForm">
+    email : <input #myInput="ngModel" ngModel required email name="email" type="text" class="form-control">
+    @if (myInput.invalid && myInput.touched){
+    <div class="alert alert-danger">
+        Email required
+    </div>
+    }
+
+    password : <input #mypass="ngModel" ngModel required name="password" type="password" minlength="4"
+        class="form-control">
+    @if (mypass.invalid && mypass.touched){
+    <div class="alert alert-danger">
+        Password of minimum 4 characters required
+    </div>
+    }
+
+
+
+
+    <button (click)="onSubmit(myForm)" class="btn btn-primary" [disabled]="myForm.invalid">submit</button>
+
+    @if (myForm.invalid && myForm.touched){
+    <div class="alert alert-danger">
+        The form should be filled correctly before submitting
+    </div>
+    }
+
+</form>
