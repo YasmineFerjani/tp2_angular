@@ -12,10 +12,10 @@ export class EmbaucheService {
   embaucher(personne: Personne){
     if(this.liste_embauche.find((prs)=> prs.id === personne.id) == null){
         this.liste_embauche.push(personne);
+        this.ToastrService.success(personne.name + " est embauché(e)", "Action Réussie", {timeOut:3000})
     } 
     else{
-      alert(personne.name + " est déjà embauché(e)");
-      // this.ToastrService.error(personne.name + " est déjà embauché(e)", "Action Répétée", {timeOut:3000});
+      this.ToastrService.error(personne.name + " est déjà embauché(e)", "Action Répétée", {timeOut:3000});
     }
   }
   getListeEmbaucheFull(): Personne[]{

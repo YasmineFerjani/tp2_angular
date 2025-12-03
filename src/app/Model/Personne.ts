@@ -3,11 +3,11 @@ export class Personne {
     name: string;
     firstname: string;
     age: number;
-    path : string;
-    cin : number
-    job : string;
-    description: string;
-    constructor(id = 0,name='', firstname = '', age = 0, path= '', cin = 1, job = '', description = '') {
+    path: string;
+    cin: number
+    job: string;
+    description?: string;
+    constructor(id = 0, name = '', firstname = '', age = 0, path = '', cin = 1, job = '', description = '') {
         this.id = id;
         this.name = name;
         this.firstname = firstname;
@@ -16,4 +16,5 @@ export class Personne {
         this.cin = cin;
         this.job = job;
         this.description = description;
-    }}
+    }
+}

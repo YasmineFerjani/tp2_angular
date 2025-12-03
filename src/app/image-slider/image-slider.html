@@ -1,0 +1,19 @@
+@if (image$ | async; as img) {
+<img [src]="img" [style.width.px]="width" [style.height.px]="height" alt="slider">
+}
+
+<div class="form-group">
+    <label>Largeur (px) :</label>
+    <input type="number" class="form-control" [(ngModel)]="width">
+</div>
+
+<div class="form-group">
+    <label>Hauteur (px) :</label>
+    <input type="number" class="form-control" [(ngModel)]="height">
+</div>
+
+<div class="form-group">
+    <label>Vitesse (ms) :</label>
+    <input type="number" class="form-control" [(ngModel)]="speed" (ngModelChange)="onSpeedChange()">
+
+</div>
