@@ -9,14 +9,14 @@ import { CvService } from '../../services/cv-service';
   templateUrl: './listecv.html',
   styleUrl: './listecv.css',
 })
-export class Listecv implements OnInit {
+export class Listecv {
 
   CvService = inject(CvService);
 
   personnes: Personne[] = [];
   selected_person = output<Personne>();
 
-  ngOnInit() {
+  constructor() {
 
     this.CvService.getFullList().subscribe((list) => {
       this.personnes = list;
