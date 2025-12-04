@@ -1,0 +1,120 @@
+@if (cv) {
+
+<div class="cv-container">
+    <H1>New HTML</H1>
+
+    <img [src]="'assets/images/' + cv.path" />
+
+    <form #myForm="ngForm" (ngSubmit)="onSaveChanges(myForm)">
+
+        <div class="cv-field">
+            <label>Name</label>
+            <input
+                class="form-control"
+                name="name"
+                [(ngModel)]="cv.name"
+                required
+                #name="ngModel"
+                [class.is-invalid]="name.invalid && name.touched"
+            >
+            @if(name.invalid && name.touched) {
+                <div class="invalid-feedback">Name is required.</div>
+            }
+        </div>
+
+        <div class="cv-field">
+            <label>Firstname</label>
+            <input
+                class="form-control"
+                name="firstname"
+                [(ngModel)]="cv.firstname"
+                required
+                #firstname="ngModel"
+                [class.is-invalid]="firstname.invalid && firstname.touched"
+            >
+            @if(firstname.invalid && firstname.touched) {
+                <div class="invalid-feedback">Firstname is required.</div>
+            }
+        </div>
+
+        <div class="cv-field">
+            <label>Age</label>
+            <input
+                type="number"
+                class="form-control"
+                name="age"
+                [(ngModel)]="cv.age"
+                required
+                min="1"
+                #age="ngModel"
+                [class.is-invalid]="age.invalid && age.touched"
+            >
+            @if(age.invalid && age.touched) {
+                <div class="invalid-feedback">Age must be at least 1.</div>
+            }
+        </div>
+
+        <div class="cv-field">
+            <label>CIN</label>
+            <input
+                class="form-control"
+                name="cin"
+                [(ngModel)]="cv.cin"
+                required
+                #cin="ngModel"
+                [class.is-invalid]="cin.invalid && cin.touched"
+            >
+            @if(cin.invalid && cin.touched) {
+                <div class="invalid-feedback">CIN is required.</div>
+            }
+
+        </div>
+
+        <div class="cv-field">
+            <label>Job</label>
+            <input
+                class="form-control"
+                name="job"
+                [(ngModel)]="cv.job"
+                required
+                #job="ngModel"
+                [class.is-invalid]="job.invalid && job.touched"
+            >
+            @if(job.invalid && job.touched) {
+                <div class="invalid-feedback">Job is required.</div>
+            }
+        </div>
+
+        <div class="cv-field">
+            <label>Description</label>
+            <textarea
+                class="form-control"
+                rows="3"
+                name="description"
+                [(ngModel)]="cv.description"
+                required
+                #description="ngModel"
+                [class.is-invalid]="description.invalid && description.touched"
+            ></textarea>
+            @if(description.invalid && description.touched) {
+                <div class="invalid-feedback">Description is required.</div>
+            }
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-danger" type="button" (click)="deleteCV(cv.id)">Delete</button>
+
+            <button class="btn btn-primary"
+                type="submit"
+                [disabled]="myForm.invalid || !myForm.dirty">
+                Save Changes
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+} @else {
+<p>Sorry, couldn't find the CV with id {{ id }}.</p>
+}

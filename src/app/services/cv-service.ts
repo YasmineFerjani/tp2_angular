@@ -10,7 +10,7 @@ import { Personne } from '../Model/Personne';
 })
 export class CvService {
 
-  private apiUrl = 'https://apilb.tridevs.net/api/personnes';
+  private apiUrl = 'https://apilb.tridevs.net/api/personne';
 
   private cv_list: Personne[] = [
     {
@@ -61,4 +61,16 @@ export class CvService {
       this.cv_list.splice(idx, 1);
     }
   }
+
+  updateCv(id: number, newValues: Partial<Personne>) {
+  const idx = this.cv_list.findIndex(cv => cv.id === id);
+
+  if (idx !== -1) {
+    this.cv_list[idx] = {
+      ...this.cv_list[idx],
+      ...newValues
+      };
+    }
+  }
+
 }
